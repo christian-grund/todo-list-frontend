@@ -1,5 +1,26 @@
-<form (ngSubmit)="login()">
-  <input type="email" name="email" [(ngModel)]="email" required />
-  <input type="password" name="password" [(ngModel)]="password" required />
-  <button>Login</button>
-</form>
+<section>
+  <div class="regestration-link-box">
+    <span>Not a regestrated user?</span>
+    <a href="/regestration"><button class="grey-btn">Regestrate</button><img src="" alt="" /></a>
+  </div>
+  <div class="login-box">
+    <h2>Log In</h2>
+    <form action="" (ngSubmit)="login()">
+      <input
+        type="text"
+        name="username"
+        [(ngModel)]="username"
+        required
+        placeholder="Username"
+      />
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        placeholder="Password"
+      />
+      <button class="grey-btn">Login</button>
+    </form>
+  </div>
+</section>

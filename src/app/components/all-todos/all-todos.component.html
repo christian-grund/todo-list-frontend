@@ -1,1 +1,14 @@
-<p>all-todos works!</p>
+<section>
+  <div *ngFor="let todo of todos" class="todo-card">
+    <span>
+      <input type="checkbox" [checked]="todo.checked" />
+      <span class="headline">Titel: </span>
+      <span class="color-White">{{ todo.title }}</span>
+    </span>
+    <div>
+      <span class="headline">Description</span>
+      <textarea name="description" id="description">{{ todo.description }}
+      </textarea>
+    </div>
+  </div>
+</section>
