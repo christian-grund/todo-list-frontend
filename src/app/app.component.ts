@@ -12,4 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 })
 export class AppComponent {
   title = 'todo-list-frontend';
+
+  constructor() {
+    console.log('AppComponent initialized');
+  }
 }
