@@ -24,23 +24,10 @@ export class AllTodosComponent {
     }
   }
 
-  // loadTodos() {
-  //   const url = environment.baseUrl + '/todos/';
-  //   return lastValueFrom(this.http.get(url));
-  // }
 
   loadTodos() {
     const url = environment.baseUrl + 'todos/';
-<<<<<<< Updated upstream
     
     return lastValueFrom(this.http.get(url));
-=======
-    let headers = new HttpHeaders();
-    headers = headers.set('Authorization', 'Token ' + localStorage.getItem('token'))
-    console.log('Token:', localStorage.getItem('token'));
-    return lastValueFrom(this.http.get(url, {
-      headers: headers 
-    }));
->>>>>>> Stashed changes
   }
 }

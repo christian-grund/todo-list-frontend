@@ -6,29 +6,29 @@ import { catchError, Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthInterceptorService {}
-// implements HttpInterceptor {
+export class AuthInterceptorService implements HttpInterceptor {
 
-//   constructor(private router: Router) { }
-//   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-//     const token = localStorage.getItem('token');
-//     if (token) {
-//       request = request.clone({
-//         setHeaders: { Authorization: `Token ${token}` }
-//       });
-//     }
+  constructor(private router: Router) { }
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    debugger;
+    const token = localStorage.getItem('token');
+    if (token) {
+      request = request.clone({
+        setHeaders: { Authorization: `Token ${token}` }
+      });
+    }
 
-//     return next.handle(request).pipe(catchError((err) => {
-//       if (err instanceof HttpErrorResponse) {
-//         if (err.status === 401) {
-//           this.router.navigateByUrl('/login');
-//         }
-//       }
-//       return throwError(() => err);
-//     }));
+    return next.handle(request).pipe(catchError((err) => {
+      if (err instanceof HttpErrorResponse) {
+        if (err.status === 401) {
+          this.router.navigateByUrl('/login');
+        }
+      }
+      return throwError(() => err);
+    }));
 
-//   }
-// }
+  }
+}
 
   // constructor(private router: Router) { }
 
