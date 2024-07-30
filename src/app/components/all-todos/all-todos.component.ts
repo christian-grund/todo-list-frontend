@@ -14,22 +14,33 @@ import { CommonModule } from '@angular/common';
 export class AllTodosComponent {
   todos: any = [];
   error = '';
-
-  constructor(private http: HttpClient) {}
-
+  constructor(private http: HttpClient) { }
 
   async ngOnInit() {
     try {
       this.todos = await this.loadTodos();
-      console.log(this.todos);
     } catch (e) {
       this.error = 'Fehler beim Laden!';
     }
   }
 
+  // loadTodos() {
+  //   const url = environment.baseUrl + '/todos/';
+  //   return lastValueFrom(this.http.get(url));
+  // }
+
   loadTodos() {
     const url = environment.baseUrl + 'todos/';
+<<<<<<< Updated upstream
     
     return lastValueFrom(this.http.get(url));
+=======
+    let headers = new HttpHeaders();
+    headers = headers.set('Authorization', 'Token ' + localStorage.getItem('token'))
+    console.log('Token:', localStorage.getItem('token'));
+    return lastValueFrom(this.http.get(url, {
+      headers: headers 
+    }));
+>>>>>>> Stashed changes
   }
 }
