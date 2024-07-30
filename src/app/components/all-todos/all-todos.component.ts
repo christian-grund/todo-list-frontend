@@ -29,7 +29,7 @@ export class AllTodosComponent {
 
   loadTodos() {
     const url = environment.baseUrl + 'todos/';
-
+    
     return lastValueFrom(this.http.get(url));
   }
 }
