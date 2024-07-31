@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.mdl-layout {
+    height: unset !important;
+}
+
+.mdl-layout__container {
+    height: unset !important;
+}
+
+.mdl-layout__header-row {
+    padding: 0 0 0 72px;
+}

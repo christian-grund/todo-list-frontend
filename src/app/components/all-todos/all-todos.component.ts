@@ -21,6 +21,7 @@ export class AllTodosComponent {
   async ngOnInit() {
     try {
       this.todos = await this.loadTodos();
+      console.log('todos:', this.todos)
     } catch (e) {
       this.error = 'Fehler beim Laden!';
     }

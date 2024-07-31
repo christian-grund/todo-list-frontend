@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe(event => {
       const url = (event as NavigationEnd).url;
-      console.log("Final URL after NavigationEnd: ", url);
       this.routeParam = this.capitalizeFirstLetter(url.split('/').pop() || '');
     });
   }
