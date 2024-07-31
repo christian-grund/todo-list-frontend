@@ -30,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/material-design-lite/material.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/material-design-lite/material.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {

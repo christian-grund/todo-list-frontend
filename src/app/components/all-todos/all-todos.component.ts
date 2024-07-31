@@ -19,7 +19,6 @@ export class AllTodosComponent {
 
 
   async ngOnInit() {
-    console.log('ngOnInit started'); // Hinzugefügt
     try {
       this.todos = await this.loadTodos();
     } catch (e) {
@@ -29,7 +28,6 @@ export class AllTodosComponent {
 
 
   loadTodos() {
-    console.log('loadTodos')
     const url = environment.baseUrl + 'todos/';
     return lastValueFrom(this.http.get(url));
   }

@@ -1,0 +1,26 @@
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  padding: 24px 0;
+  gap: 24px;
+}
+
+.register-text {
+  padding-top: 32px;
+  font-size: 18px;
+}
