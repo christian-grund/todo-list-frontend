@@ -14,7 +14,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  constructor(private http: HttpClient, private as: AuthService, private router: Router) {}
+  // private http: HttpClient,
+  constructor( private as: AuthService, private router: Router) {}
 
   async login() {
     try {
@@ -23,6 +24,8 @@ export class LoginComponent {
         this.password
       );
       console.log(resp);
+      localStorage.setItem('token', resp['token']);
+      this.router.navigateByUrl('/todos');
     } catch (e) {
       alert('login Fehlgeschlagen');
       console.error(e);

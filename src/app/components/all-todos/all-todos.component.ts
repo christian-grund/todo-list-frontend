@@ -15,25 +15,22 @@ export class AllTodosComponent {
   todos: any = [];
   error = '';
 
-  constructor(private http: HttpClient) {
-    console.log('AllTodosComponent constructor');
-  }
+  constructor(private http: HttpClient) { }
 
 
   async ngOnInit() {
     console.log('ngOnInit started'); // Hinzugefügt
     try {
       this.todos = await this.loadTodos();
-      console.log(this.todos);
     } catch (e) {
       this.error = 'Fehler beim Laden!';
     }
   }
 
+
   loadTodos() {
     console.log('loadTodos')
     const url = environment.baseUrl + 'todos/';
-
     return lastValueFrom(this.http.get(url));
   }
 }
