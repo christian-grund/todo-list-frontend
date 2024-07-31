@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient, ) { }
 
   public loginWithUsernameAndPassword(username: string, password: String) {
-    const url = environment.baseUrl + '/login/';
+    const url = environment.baseUrl + 'login/';
     console.log('login url:', url)
     const body = { "username": username, "password": password };
     return lastValueFrom(this.http.post(url, body));

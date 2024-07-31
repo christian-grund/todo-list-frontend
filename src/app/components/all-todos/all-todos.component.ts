@@ -27,7 +27,6 @@ export class AllTodosComponent {
 
   loadTodos() {
     const url = environment.baseUrl + 'todos/';
-    console.log('url:', url)
     return lastValueFrom(this.http.get(url));
   }
 }
