@@ -1,0 +1,21 @@
+.register-section {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.pw-requirements {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 32px;
+
+    p {
+        font-size: 18px;
+        font-weight: bold;
+        margin: unset;
+    }
+}

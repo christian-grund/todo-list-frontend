@@ -1,0 +1,10 @@
+.header-logout {
+    p {
+        margin: unset;
+
+        &:hover {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+}

@@ -7,6 +7,29 @@
     height: unset !important;
 }
 
-.mdl-layout__header-row {
-    padding: 0 0 0 72px;
+// .mdl-layout__header-row {
+//     padding: 0 0 0 72px !important;
+// }
+
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.btns-bottom {
+	display: flex;
+	justify-content: center;
+	gap: 24px;
+}
+
+.header-container {
+	display: flex !important;
+	justify-content: space-between !important;
+}
+
+.header-logout {
+	display: flex;
+	justify-content: flex-end;
 }

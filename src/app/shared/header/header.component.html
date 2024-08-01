@@ -1,10 +1,10 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
+      <div class="mdl-layout__header-row header-container">
         <!-- Title -->
-        <span class="mdl-layout-title">Aktuelle Route: {{ routeParam }}</span>
+        <span class="mdl-layout-title">Hello {{ username }}! You are here: {{ routeParam }}</span>
         <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-layout-spacer header-logout" ><p (click)="logout()">Logout</p></div>
         <!-- Navigation. We hide it in small screens. -->
         
       </div>

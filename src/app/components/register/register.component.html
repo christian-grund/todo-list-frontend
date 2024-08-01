@@ -1,1 +1,55 @@
-<p>register works!</p>
+<section class="register-section">
+<h1>Register</h1>
+    <form method="post" class="form">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input"
+                   type="text"
+                   id="regUsername"
+                   name="username" 
+                   onkeyup="enableBtn()"/>
+            <label class="mdl-textfield__label" for="regUsername">User name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input"
+                   type="text"
+                   id="regFirstName"
+                   name="first_name"
+                   onkeyup="enableBtn()" 
+                   />
+            <label class="mdl-textfield__label" for="regFirstName">First tname</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input"
+                   type="password"
+                   id="regPassword"
+                   name="password1"
+                   onkeyup="enableBtn()" 
+                   />
+            <label class="mdl-textfield__label" for="regPassword">Password</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input"
+                   type="password"
+                   id="regVerifyPassword"
+                   name="password2"
+                   onkeyup="enableBtn()" 
+                   />
+                   
+            <label class="mdl-textfield__label" for="regVerifyPassword">Verify password</label>
+        </div>
+        <div class="btns-bottom">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" disabled id="registerBtn">Register</button>
+            <a href="#"
+               class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> Back to login </a>
+        </div>
+        
+        <div class="pw-requirements">
+            <p>Register requirements:</p>
+            <ul>
+                <li>Your user name must contain at least 3 characters.</li>
+                <li>Your first name must contain at least 3 characters.</li>
+                <li>Your password must contain at least 8 characters.</li>
+            </ul>
+        </div>
+    </form>
+</section>
