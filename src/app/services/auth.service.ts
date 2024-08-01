@@ -13,19 +13,23 @@ export class AuthService {
   public loginWithUsernameAndPassword(username: string, password: String) {
     const url = environment.baseUrl + 'login/';
     const body = { "username": username, "password": password };
-    console.log('lastValueFrom:', this.http.post(url, body))
     return lastValueFrom(this.http.post(url, body));
   }
 
   public logout() {
     const url = environment.baseUrl + 'logout/';
     const token = localStorage.getItem('token');
-    if (!token) {
-      throw new Error('No token found in local storage');
-    }
     const headers = new HttpHeaders({
       'Authorization': `Token ${token}`
     });
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
     return lastValueFrom(this.http.post(url, {}, { headers }));
   }
+
+  public getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  
 }

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { lastValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-all-todos',
@@ -15,7 +16,7 @@ export class AllTodosComponent {
   todos: any = [];
   error = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
 
   async ngOnInit() {
@@ -30,6 +31,16 @@ export class AllTodosComponent {
 
   loadTodos() {
     const url = environment.baseUrl + 'todos/';
-    return lastValueFrom(this.http.get(url));
+    const token = this.authService.getToken();
+
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Token ${token}`
+    });
+
+    return lastValueFrom(this.http.get(url, { headers }));
   }
 }
