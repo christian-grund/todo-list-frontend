@@ -5,11 +5,12 @@
             <input class="mdl-textfield__input"
                    type="text"
                    id="regUsername"
-                   name="username" 
+                   name="username"
+                   [(ngModel)]="username" 
                    onkeyup=""/>
             <label class="mdl-textfield__label" for="regUsername">User name</label>
         </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input"
                    type="text"
                    id="regFirstName"
@@ -17,12 +18,13 @@
                    onkeyup="" 
                    />
             <label class="mdl-textfield__label" for="regFirstName">First tname</label>
-        </div>
+        </div> -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input"
                    type="password"
                    id="regPassword"
                    name="password1"
+                   [(ngModel)]="password1"
                    onkeyup="" 
                    />
             <label class="mdl-textfield__label" for="regPassword">Password</label>
@@ -32,6 +34,7 @@
                    type="password"
                    id="regVerifyPassword"
                    name="password2"
+                   [(ngModel)]="password2"
                    onkeyup="" 
                    />
                    

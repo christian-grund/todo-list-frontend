@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, ) { }
 
-  public loginWithUsernameAndPassword(username: string, password: String) {
+  public loginWithUsernameAndPassword(username: string, password: string) {
     const url = environment.baseUrl + 'login/';
     const body = { "username": username, "password": password };
     return lastValueFrom(this.http.post(url, body));
@@ -25,6 +25,12 @@ export class AuthService {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     return lastValueFrom(this.http.post(url, {}, { headers }));
+  }
+
+  public registerWithCredentials(username: string, password: string) {
+    const url = environment.baseUrl + 'register/';
+    const body = { "username": username, "password": password };
+    return lastValueFrom(this.http.post(url, body));
   }
 
   public getToken(): string | null {
