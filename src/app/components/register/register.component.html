@@ -1,12 +1,12 @@
 <section class="register-section">
 <h1>Register</h1>
-    <form method="post" class="form">
+    <form (ngSubmit)="register()" class="form">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input"
                    type="text"
                    id="regUsername"
                    name="username" 
-                   onkeyup="enableBtn()"/>
+                   onkeyup=""/>
             <label class="mdl-textfield__label" for="regUsername">User name</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -14,7 +14,7 @@
                    type="text"
                    id="regFirstName"
                    name="first_name"
-                   onkeyup="enableBtn()" 
+                   onkeyup="" 
                    />
             <label class="mdl-textfield__label" for="regFirstName">First tname</label>
         </div>
@@ -23,7 +23,7 @@
                    type="password"
                    id="regPassword"
                    name="password1"
-                   onkeyup="enableBtn()" 
+                   onkeyup="" 
                    />
             <label class="mdl-textfield__label" for="regPassword">Password</label>
         </div>
@@ -32,14 +32,15 @@
                    type="password"
                    id="regVerifyPassword"
                    name="password2"
-                   onkeyup="enableBtn()" 
+                   onkeyup="" 
                    />
                    
             <label class="mdl-textfield__label" for="regVerifyPassword">Verify password</label>
         </div>
         <div class="btns-bottom">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" disabled id="registerBtn">Register</button>
-            <a href="#"
+            <!-- disabled  -->
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="registerBtn">Register</button>
+            <a routerLink="/login"
                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> Back to login </a>
         </div>
         
