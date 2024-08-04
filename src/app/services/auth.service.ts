@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8000/todos/'; 
+  private apiUrl = environment.baseUrl + 'todos/'; 
 
   constructor(private http: HttpClient, ) { }
 
@@ -35,7 +35,16 @@ export class AuthService {
   }
 
   addTodo(todo: { title: string }): Observable<any> {
-    return this.http.post(this.apiUrl, todo);
+    const token = this.getToken();
+    if (!token) {
+      throw new Error('No token found');
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Token ${token}`
+    });
+
+    return this.http.post(this.apiUrl, todo, { headers });
   }
 
   public getToken(): string | null {

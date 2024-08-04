@@ -30,17 +30,17 @@ export class AllTodosComponent {
     }
   }
 
-  addTodo() {
+  async addTodo() {
     if (this.newTodo.trim()) {
-      this.authService.addTodo({ title: this.newTodo }).subscribe(
-        response => {
-          console.log('Todo added', response);
-          this.newTodo = ''; // Clear the input after adding
-        },
-        error => {
-          console.error('Error adding todo', error);
-        }
-      );
+      try {
+        await this.authService.addTodo({ title: this.newTodo }).toPromise();
+        this.newTodo = ''; // Clear the input after adding
+        // Update todos list
+        this.todos = await this.loadTodos();
+      } catch (error) {
+        console.error('Error adding todo', error);
+        this.error = 'Fehler beim Hinzufügen des Todos!';
+      }
     }
   }
 
