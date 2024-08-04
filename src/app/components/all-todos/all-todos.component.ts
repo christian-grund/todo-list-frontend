@@ -78,7 +78,15 @@ export class AllTodosComponent {
   }
 
   // Patch-Request
-  toggleCheckbox() {
-    this.isChecked = !this.isChecked;
+  toggleCheckbox(index: number) {
+    const todo = this.todos[index];
+    const newCheckedState = !todo.checked;
+    this.authService.updateTodoChecked(todo.id, newCheckedState).subscribe(() => {
+      todo.checked = newCheckedState;
+    });
+  }
+
+  getCheckboxImagePath(checked: boolean) {
+    return checked ? '../../../assets/img/checkbox-checked.svg' : '../../../assets/img/checkbox-empty.svg';
   }
 }

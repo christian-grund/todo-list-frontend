@@ -10,8 +10,8 @@
         <div *ngFor="let todo of todos; let i = index" class="todos">
             <p>{{ todo.title }} {{ todos.id }}</p>
             <div class="icons">
-                <div class="icon" (click)="toggleCheckbox()">
-                    <img [src]="isChecked ? '../../../assets/img/checkbox-checked.svg' : '../../../assets/img/checkbox-empty.svg'" alt="check">
+                <div class="icon" (click)="toggleCheckbox(i)">
+                    <img [src]="getCheckboxImagePath(todo.checked)" alt="check">
                 </div>   
                 <div class="icon">
                     <img src="../../../assets/img/edit.svg" alt="edit">

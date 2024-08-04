@@ -30,14 +30,16 @@
 
         div {
             display: flex;
+            justify-content: center;
             align-items: center;
-            flex-shrink: 0;
+            // flex-shrink: 0;
+            width: 143px;
             color: black;
             background: #FFDFDB;
             border-radius: 0 12px 12px 0;
             height: 3rem;
             p {
-                padding: 0 12px;
+                // padding: 0 12px;
                 text-align: center;
                 font-size: 20px;
                 &:hover {

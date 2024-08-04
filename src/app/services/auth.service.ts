@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = environment.baseUrl + 'todos/'; 
+  private apiUrl = environment.baseUrl + 'todos'; 
 
   constructor(private http: HttpClient, ) { }
 
@@ -48,7 +48,11 @@ export class AuthService {
   }
 
   deleteTodo(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  updateTodoChecked(id: number, isChecked: boolean): Observable<any> {
+    return this.http.patch(`${this.apiUrl}/${id}/patch/`, { checked: isChecked });
   }
 
   public getToken(): string | null {
