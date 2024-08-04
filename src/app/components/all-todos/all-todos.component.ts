@@ -15,6 +15,7 @@ import { AuthService } from '../../services/auth.service';
 export class AllTodosComponent {
   todos: any = [];
   error = '';
+  isChecked = false;
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
@@ -42,5 +43,9 @@ export class AllTodosComponent {
     });
 
     return lastValueFrom(this.http.get(url, { headers }));
+  }
+
+  toggleCheckbox() {
+    this.isChecked = !this.isChecked;
   }
 }

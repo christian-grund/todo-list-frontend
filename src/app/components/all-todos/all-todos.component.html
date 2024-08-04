@@ -1,8 +1,22 @@
 <div class="main-todos">
     <div class="wrapper">
         <h1>Just do it.</h1>
+        <div class="add-todo">
+            <input type="text" placeholder="Add a task.">
+            <div>
+                <p>I got this!</p>
+            </div>
+        </div>
         <div *ngFor="let todo of todos" class="todos">
-            <input [checked]="todo.checked" type="checkbox">{{ todo.title }}
+            <p>{{ todo.title }}</p>
+            <div class="icons">
+                <div class="icon" (click)="toggleCheckbox()">
+                    <img [src]="isChecked ? '../../../assets/img/checkbox-checked.svg' : '../../../assets/img/checkbox-empty.svg'" alt="check">
+                  </div>                  
+                <div class="icon">
+                    <img src="../../../assets/img/delete.svg" alt="delete">
+                </div>
+            </div>
         </div>
     </div>
 </div>

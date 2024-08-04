@@ -5,6 +5,10 @@ body {
 	position: relative;
 }
 
+p {
+	margin: unset !important;
+}
+
 .mdl-layout {
     height: unset !important;
 }
