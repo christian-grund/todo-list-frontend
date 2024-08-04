@@ -25,26 +25,14 @@ export class HeaderComponent implements OnInit {
       this.routeParam = url.split('/').pop() || '';
 
       if (this.routeParam === 'todos') {
-        this.loadUsername();
+        if (typeof window !== 'undefined') {
+          this.username = localStorage.getItem('username') || '';
+        }
       }
     });
-    // if (typeof window !== 'undefined') {
-    //   this.username = localStorage.getItem('username') || '';
-    //   console.log('Username:', this.username)
-    // }
+   
   }
 
-  loadUsername(): void {
-    this.username = localStorage.getItem('username') || '';
-    console.log('Username:', this.username);
-  }
-
-  // ngAfterViewInit(): void {
-  //   setTimeout(() => {
-  //     this.username = localStorage.getItem('username') || '';
-  //     console.log('Username after view init:', this.username);
-  //   }, 100);
-  // }
 
   async logout() {
     try {
@@ -52,7 +40,6 @@ export class HeaderComponent implements OnInit {
       localStorage.removeItem('token');
       localStorage.removeItem('username');
       this.router.navigateByUrl('/logout');
-      console.log('User successfully logged out')
     } catch (e) {
       console.error('Logout failed', e);
       alert('Logout fehlgeschlagen');

@@ -2,8 +2,8 @@
     <div class="wrapper">
         <h1>Just do it.</h1>
         <div class="add-todo">
-            <input type="text" placeholder="Add a task.">
-            <div>
+            <input type="text" [(ngModel)]="newTodo" placeholder="Add a task.">
+            <div (click)="addTodo()">
                 <p>I got this!</p>
             </div>
         </div>

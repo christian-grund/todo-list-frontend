@@ -20,7 +20,6 @@ export class RegisterComponent {
   async register() {
     try {
       let response = await this.as.registerWithCredentials(this.username, this.password1);
-      console.log('Registration successful:', response);
       this.router.navigateByUrl('/login');
     } catch (err) {
       console.error('Registration failed', err)

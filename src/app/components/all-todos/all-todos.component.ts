@@ -4,16 +4,18 @@ import { environment } from '../../../environments/environment.development';
 import { lastValueFrom } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-all-todos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './all-todos.component.html',
   styleUrl: './all-todos.component.scss',
 })
 export class AllTodosComponent {
   todos: any = [];
+  newTodo: string = '';
   error = '';
   isChecked = false;
 
@@ -23,9 +25,22 @@ export class AllTodosComponent {
   async ngOnInit() {
     try {
       this.todos = await this.loadTodos();
-      console.log('todos:', this.todos)
     } catch (e) {
       this.error = 'Fehler beim Laden!';
+    }
+  }
+
+  addTodo() {
+    if (this.newTodo.trim()) {
+      this.authService.addTodo({ title: this.newTodo }).subscribe(
+        response => {
+          console.log('Todo added', response);
+          this.newTodo = ''; // Clear the input after adding
+        },
+        error => {
+          console.error('Error adding todo', error);
+        }
+      );
     }
   }
 
