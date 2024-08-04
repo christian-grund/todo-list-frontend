@@ -1,3 +1,16 @@
-.todos {
-    padding-top: 100px;
+.main-todos {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    h1 {
+        font-size: 10rem !important;
+    }
+
+    .todos {
+        padding-top: 20px;
+    }
 }
+

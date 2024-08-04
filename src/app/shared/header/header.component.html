@@ -1,12 +1,20 @@
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row header-container">
-        <!-- Title -->
-        <span class="mdl-layout-title">Hello {{ username }}! You are here: {{ routeParam }}</span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer header-logout" ><p (click)="logout()">Logout</p></div>
-        <!-- Navigation. We hide it in small screens. -->
-        
-      </div>
-    </header>
-  </div>
+<header>
+  <ng-container *ngIf="routeParam === 'todos'; else otherContent">
+    <p>Hello {{ username }}!</p>
+    <p class="header-logout" (click)="logout()">Logout</p>
+  </ng-container>
+  <ng-template #otherContent>
+    <p>Welcome, please log in!</p>
+  </ng-template>
+  
+</header>
+
+
+<!-- <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row header-container">
+      <span class="mdl-layout-title">Hello {{ username }}!</span>
+      <div class="mdl-layout-spacer header-logout" ><p *ngIf="routeParam === '/todos'" (click)="logout()">Logout</p></div>      
+    </div>
+  </header>
+</div> -->

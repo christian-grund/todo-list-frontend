@@ -1,10 +1,17 @@
-.header-logout {
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
     p {
-        margin: unset;
+        font-size: 18px;
+    }
+}
 
+.header-logout {
+        margin: unset;
         &:hover {
             cursor: pointer;
-            font-weight: bold;
+            text-decoration: underline;
         }
-    }
 }

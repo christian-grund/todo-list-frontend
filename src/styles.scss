@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+	background: linear-gradient(to right, #545555, #0C3040);
+	color: #FFDFDB;
+	position: relative;
+}
+
 .mdl-layout {
     height: unset !important;
 }
@@ -7,15 +13,20 @@
     height: unset !important;
 }
 
-// .mdl-layout__header-row {
-//     padding: 0 0 0 72px !important;
-// }
+.mdl-textfield {
+    padding: 1.25rem 0 !important;
+}
 
 .form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	min-width: 300px;
+}
+
+.gap-24 {
+	gap: 24px;
 }
 
 .btns-bottom {

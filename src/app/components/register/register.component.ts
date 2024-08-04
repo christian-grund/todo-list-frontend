@@ -27,4 +27,13 @@ export class RegisterComponent {
     }
   }
 
+  enableBtn() {
+    const registerBtn = document.getElementById('registerBtn') as HTMLButtonElement;
+
+    if (this.username.length >= 3 && this.password1.length >= 8 && this.password2.length >= 8 && this.password1 === this.password2) {
+      registerBtn.disabled = false;
+    } else {
+      registerBtn.disabled = true;
+    }
+  }
 }

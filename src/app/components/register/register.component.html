@@ -7,25 +7,16 @@
                    id="regUsername"
                    name="username"
                    [(ngModel)]="username" 
-                   onkeyup=""/>
+                   (keyup)="enableBtn()"/>
             <label class="mdl-textfield__label" for="regUsername">User name</label>
         </div>
-        <!-- <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input"
-                   type="text"
-                   id="regFirstName"
-                   name="first_name"
-                   onkeyup="" 
-                   />
-            <label class="mdl-textfield__label" for="regFirstName">First tname</label>
-        </div> -->
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input"
                    type="password"
                    id="regPassword"
                    name="password1"
                    [(ngModel)]="password1"
-                   onkeyup="" 
+                   (keyup)="enableBtn()" 
                    />
             <label class="mdl-textfield__label" for="regPassword">Password</label>
         </div>
@@ -35,25 +26,24 @@
                    id="regVerifyPassword"
                    name="password2"
                    [(ngModel)]="password2"
-                   onkeyup="" 
+                   (keyup)="enableBtn()" 
                    />
                    
             <label class="mdl-textfield__label" for="regVerifyPassword">Verify password</label>
         </div>
         <div class="btns-bottom">
-            <!-- disabled  -->
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="registerBtn">Register</button>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="registerBtn" disabled>Register</button>
             <a routerLink="/login"
                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> Back to login </a>
         </div>
-        
-        <div class="pw-requirements">
-            <p>Register requirements:</p>
-            <ul>
-                <li>Your user name must contain at least 3 characters.</li>
-                <li>Your first name must contain at least 3 characters.</li>
-                <li>Your password must contain at least 8 characters.</li>
-            </ul>
-        </div>
     </form>
+        
+    <div class="pw-requirements">
+        <p>Register requirements:</p>
+        <ul>
+            <li>Your user name must contain at least 3 characters.</li>
+            <li>Your password must contain at least 8 characters.</li>
+        </ul>
+    </div>
+    
 </section>
