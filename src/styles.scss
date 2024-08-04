@@ -9,6 +9,12 @@ p {
 	margin: unset !important;
 }
 
+input {
+	&:focus-visible{
+		outline: none;
+	} 
+}
+
 .mdl-layout {
     height: unset !important;
 }

@@ -2,22 +2,31 @@
   <div class="login-box">
     <h2>Login</h2>
     <form (ngSubmit)="login()" class="form gap-24">
-      <input
-        class="mdl-textfield__input"
-        type="text"
-        name="username"
-        [(ngModel)]="username"
-        required
-        placeholder="Username"
-      />
-      <input
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input
+          class="mdl-textfield__input"
+          type="text"
+          id="logUsername"
+          name="username"
+          [(ngModel)]="username"
+          
+        />
+        <label class="mdl-textfield__label" for="logUsername">User name</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="password" name="password" id="logPassword" [(ngModel)]="password" >
+        <label class="mdl-textfield__label" for="logPassword">Password</label>
+      </div>
+
+      <!-- <input
         class="mdl-textfield__input"
         type="password"
         name="password"
         [(ngModel)]="password"
         required
         placeholder="Password"
-      />
+      /> -->
+
       <button
         class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Login</button>
     </form>

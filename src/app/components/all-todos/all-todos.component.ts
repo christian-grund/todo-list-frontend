@@ -45,6 +45,7 @@ export class AllTodosComponent {
     return lastValueFrom(this.http.get(url, { headers }));
   }
 
+  // Patch-Request
   toggleCheckbox() {
     this.isChecked = !this.isChecked;
   }

@@ -3,21 +3,22 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: calc(100vh - 52px);
 	margin: 0;
-	// background-color: #f4f4f4;
+	.logout-container {
+		text-align: center;
+		// background: #fff;
+		padding: 30px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px #FFDFDB;
+		.logout-h1 {
+			margin-bottom: 20px;
+		}
+		.logout-p {
+			margin-bottom: 30px !important;
+		}
+	}
 }
-.logout-container {
-	text-align: center;
-	// background: #fff;
-	padding: 30px;
-	border-radius: 10px;
-	box-shadow: 0 0 10px #FFDFDB;
-}
-.logout-h1 {
-	margin-bottom: 20px;
-}
-.logout-p {
-	margin-bottom: 30px;
-}
+
+
 
