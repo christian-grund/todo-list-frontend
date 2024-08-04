@@ -7,8 +7,8 @@
                 <p>I got this!</p>
             </div>
         </div>
-        <div *ngFor="let todo of todos" class="todos">
-            <p>{{ todo.title }}</p>
+        <div *ngFor="let todo of todos; let i = index" class="todos">
+            <p>{{ todo.title }} {{ todos.id }}</p>
             <div class="icons">
                 <div class="icon" (click)="toggleCheckbox()">
                     <img [src]="isChecked ? '../../../assets/img/checkbox-checked.svg' : '../../../assets/img/checkbox-empty.svg'" alt="check">
@@ -17,7 +17,7 @@
                     <img src="../../../assets/img/edit.svg" alt="edit">
                 </div>
                 <div class="icon">
-                    <img src="../../../assets/img/delete.svg" alt="delete">
+                    <img src="../../../assets/img/delete.svg" alt="delete" (click)="deleteTodo(i)">
                 </div>
             </div>
         </div>

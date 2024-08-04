@@ -44,6 +44,23 @@ export class AllTodosComponent {
     }
   }
 
+  async deleteTodo(index: number): Promise<void> {
+    console.log('todos[index]:', this.todos[index]);
+    const todoId = this.todos[index].id; // Hole die ID des Todos
+    console.log('todoId:', todoId)
+    this.authService.deleteTodo(todoId).subscribe(
+      () => {
+        // Entferne das Todo aus der lokalen Liste nach erfolgreicher Löschung
+        this.todos.splice(index, 1);
+        // this.todos = this.loadTodos();
+      },
+      (error) => {
+        console.error('Fehler beim Löschen des Todos:', error);
+        // Fehlerbehandlung, falls gewünscht
+      }
+    );
+  }
+
 
   loadTodos() {
     const url = environment.baseUrl + 'todos/';

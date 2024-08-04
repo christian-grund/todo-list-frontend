@@ -47,6 +47,10 @@ export class AuthService {
     return this.http.post(this.apiUrl, todo, { headers });
   }
 
+  deleteTodo(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}${id}`);
+  }
+
   public getToken(): string | null {
     return localStorage.getItem('token');
   }
