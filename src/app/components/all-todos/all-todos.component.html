@@ -7,17 +7,24 @@
                 <p>I got this!</p>
             </div>
         </div>
+        
         <div *ngFor="let todo of todos; let i = index" class="todos">
-            <p>{{ todo.title }} {{ todos.id }}</p>
-            <div class="icons">
+            <p [ngClass]="{'hidden': todo.isEditing}" #todoTitle >{{ todo.title }}</p>
+            <input [ngClass]="{'hidden': !todo.isEditing}" type="text" #editInput class="edit-input" [value]="todo.title">
+            <div class="icons" *ngIf="!todo.isEditing">
                 <div class="icon" (click)="toggleCheckbox(i)">
                     <img [src]="getCheckboxImagePath(todo.checked)" alt="check">
                 </div>   
                 <div class="icon">
-                    <img src="../../../assets/img/edit.svg" alt="edit">
+                    <img src="../../../assets/img/edit.svg" alt="edit" (click)="startEdit(i)">
                 </div>
                 <div class="icon">
                     <img src="../../../assets/img/delete.svg" alt="delete" (click)="deleteTodo(i)">
+                </div>
+            </div>
+            <div class="icons" *ngIf="todo.isEditing">
+                <div class="icon">
+                    <img src="../../../assets/img/check.svg" alt="save" (click)="saveEdit(i, editInput.value)">
                 </div>
             </div>
         </div>

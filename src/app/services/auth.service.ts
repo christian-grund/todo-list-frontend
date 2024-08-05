@@ -51,6 +51,10 @@ export class AuthService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
+  updateTodoTitle(id: number, newTitle: string): Observable<any> {
+    return this.http.patch(`${this.apiUrl}/${id}/patch/`, { title: newTitle})
+  }
+
   updateTodoChecked(id: number, isChecked: boolean): Observable<any> {
     return this.http.patch(`${this.apiUrl}/${id}/patch/`, { checked: isChecked });
   }
